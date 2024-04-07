@@ -9,6 +9,7 @@ urlpatterns = [
     path("calculate_form/",calculate_from),
     path("calculate_form/result/",calculate_result),
     
+    
     # path("result/", calculate_result ),
     # path("<int:num1>/<int:num2>",multiply),
 ] 
