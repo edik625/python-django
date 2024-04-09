@@ -1,5 +1,5 @@
 """
-URL configuration for Basic_Routing project.
+URL configuration for view_calculator project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("website/",include("website.urls") )
+    path("odd_or_even/", include("odd_or_even.urls")),
 ]

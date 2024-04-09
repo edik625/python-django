@@ -5,4 +5,4 @@ def index(request):
     return HttpResponse("You are in website")
 
 def name(request,id):
-    return HttpResponse(f"Hello,{id}")
+    return HttpResponse(f"<h1>Hello, {id} </h1")
