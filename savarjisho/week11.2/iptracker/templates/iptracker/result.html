@@ -1,0 +1,9 @@
+{% extends "iptracker/from.html" %}
+{% block ip_data %}
+    {% if data %}
+        <h2> IP Address information </h2>
+        <p> IP: {{data.ip}} </p>
+        <p> Location: {{data.city}}  {{data.region}} {{data.country}}</p>
+        <p> ISP: {{data.org}} </p>
+        {% endif %}
+    {% endblock ip_data %}
