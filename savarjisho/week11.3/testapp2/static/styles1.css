@@ -1,0 +1,30 @@
+.navbar{
+    background-color: blueviolet;
+    overflow: hidden;
+    
+}
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.navbar li {
+    float: left;
+} 
+
+.navbar li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+} 
+
+.navbar li a:hover {
+    background-color: black;
+
+
+}
