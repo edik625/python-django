@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>to-do</title>
+        <link rel='stylesheet' href='{% static "todo/styless.css" %}'>
+    </head>
+    <body>
+        <h1 class='erti' > to-do list</h1>
+        <form action = "{% url 'add_task' %}" method='POST'> 
+             {% csrf_token %}
+            <input type='text' name='title' required>
+            <button type='submit'> add task </button>  
+        </form>
+        <ul> 
+            {% for item in data %}
+                {% if item.completed %}
+                    <li class = 'completed'>
+                        {{item.title}} <a href='{% url "delete_task" item.id %}'>[delete]</a><a href='{% url "edit_task" item.id %}'>[edit]</a>
+                    </li>
+                {% else %}
+                    <li class = 'inprogress'>
+                        {{item.title}} <a href='{% url "delete_task" item.id %}'>[delete]</a><a href='{% url "edit_task" item.id %}'>[edit]</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </body>
+    </html>

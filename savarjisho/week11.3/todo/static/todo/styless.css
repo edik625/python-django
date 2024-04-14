@@ -1,0 +1,13 @@
+.completed {
+    color: black
+}
+.inprogress{
+    color: rgb(230, 17, 116)
+}
+body{
+    background-color: green;
+}
+.erti{
+    color:aliceblue;
+    padding: 14px 16px;
+}
