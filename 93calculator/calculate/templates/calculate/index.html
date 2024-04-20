@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<body>
+    <ul>
+        <h1>Choose a mathematical operation</h1>
+    </ul>   
+    <ul> 
+        <li><a href="{% url 'add' %}"> <h3> add </h3> </a> </li>
+        <li><a href="{% url 'subtract' %}"> <h3> subtract </h3> </a> </li>
+        <li><a href="{% url 'multiply' %}"> <h3> multiply </h3> </a> </li>
+        <li><a href="{% url 'divide' %}"> <h3> divide </h3> </a> </li>
+    </ul>
+</body>
+</html>

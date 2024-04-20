@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'calculate/styles.css' %}">
+    <title>calculator</title>
+</head>
+<body>
+    <a href="{% url 'calculator' %}"><h1> calculator </h1></a> 
+    <ul> 
+        <li class=erti>
+            {% block add %}
+            {% endblock %}
+            {% block subtract %}
+            {% endblock %}
+            {% block multiply %}
+            {% endblock %}
+            {% block divide %}
+            {% endblock %}
+        </li>
+    </ul>
+</body>
+</html>
