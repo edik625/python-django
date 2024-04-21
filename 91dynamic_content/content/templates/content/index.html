@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method='post'>
+        {% csrf_token %} 
+        
+        <ul>
+        
+        <li>   <h3>Enter a name:</h3>  <input type='text' name='text5'>  </li>
+        <li>   <h3>Enter a noun:</h3><input type='text' name='text1'>  </li>
+        <li>   <h3>Enter a verb:</h3><input type='text' name='text2'>  </li>
+        <li>   <h3>Enter an adjective:</h3><input type='text' name='text3'>  </li>
+        <li>   <h3>Enter an adverb::</h3><input type='text' name='text4'>  </li>
+        </ul>
+               <ul> <button type='submit'> Submit </button> </ul>
+        
+</body>
+</html>
