@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{event.title}}</title>
+</head>
+<body>
+    
+    <h3>{{event.title}}</h3>
+    <h3>{{event.discription}}</h3>
+    <h3>{{event.data}}</h3>
+    <h3>{{event.location}}</h3>
+
+    <a href="{% url 'edit' event.title%}"> Edit event {{event.title}}</a><br>
+    <a href="{% url 'delete' event.id%}"> Delete event {{event.title}}</a><br>
+    <a href="{% url 'index' %}"><B></B>Back</a>
+</body>
+</html>
