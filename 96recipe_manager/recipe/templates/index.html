@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recipe</title>
+</head>
+<body>
+    <h1> Thi is recipe </h1>
+    {% for i in recipe %}
+    <ul>
+        <li><h2><a href="{% url 'info_recipe' i.name %}">{{i}}</h2></li>
+    </ul>
+        {% endfor %}
+    
+    <a href="{% url 'add_recipe' %}"><h2>Add recipe </h2> </a>
+
+</body>
+</html>
