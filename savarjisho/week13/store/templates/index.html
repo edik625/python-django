@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for i in product %}
+        <a3>{{i.name}}</a3><a href="{% url 'edit_product' i.id %}"> Edit </a><br>
+    {% endfor %}
+
+    <a href="{% url 'product_create' %}"><h3>Product Create</h3></a>
+</body>
+</html>
