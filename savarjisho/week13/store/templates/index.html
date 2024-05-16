@@ -6,9 +6,16 @@
     <title>Document</title>
 </head>
 <body>
+    {% if user.is_authenticated %}
     {% for i in product %}
         <a3>{{i.name}}</a3><a href="{% url 'edit_product' i.id %}"> Edit </a><br>
     {% endfor %}
+    <a href='{% url "logout" %}'>log out</a>
+    {% else %}
+    <p> You are not loged in </p>
+    <a href='{% url "login" %}'>Log In</a>
+    <a href='{% url "registration" %}'>registration</a>
+    {% endif %}
 
     <a href="{% url 'product_create' %}"><h3>Product Create</h3></a>
 </body>
