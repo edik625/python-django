@@ -3,12 +3,19 @@ from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-
-from .models import User
+from .models import User,Listing,Category,Comment,Bid
 
 
 def index(request):
-    return render(request, "auctions/index.html")
+    allitems = Listing.objects.filter(isactive = True)
+    return render(request, "auctions/index.html", {'activeitems': allitems})
+
+
+def createListing(request):
+    if request.method == "POST":
+        categoryData = Category.objects.all()
+        return render(request,"auction/create.html",{"categories":categoryData})
+
 
 
 def login_view(request):

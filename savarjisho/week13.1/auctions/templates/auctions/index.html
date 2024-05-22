@@ -3,5 +3,12 @@
 {% block body %}
     <h2>Active Listings</h2>
 
-    TODO
+    {% for item in activeitems %}
+    <div class="card mx-3" style="width:20rem">
+        <img src="{{ietm.imageURL}}" alt="{{item.title}}"/>
+        <div class= "card-body">
+            <h5 class="card-title">{{item.title}}<h5>
+                <p class="card-text">{{item.description}}</p>
+    </div>
+    {% endfor %}
 {% endblock %}
