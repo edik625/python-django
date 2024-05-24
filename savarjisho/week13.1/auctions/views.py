@@ -9,7 +9,7 @@ from .models import User,Listing,Category,Comment,Bid
 def index(request):
     allitems = Listing.objects.filter(isactive = True)
     allcategory = Category.objects.all()
-    return render(request, "auctions/index.html", {'activeitems': allitems, "category":allcategory})
+    return render(request, "auctions/index.html", {'activeitems': allitems, "categories":allcategory})
 
 
 def createListing(request):
@@ -41,9 +41,34 @@ def displayCategory(request):
     if request.method == "POST":
         currentCategory = request.POST["category"]
         category = Category.objects.get(categoryName = currentCategory)
-        filteredItems = Listing.objects.filter(isActive = True,category=category)
+        filteredItems = Listing.objects.filter(isactive = True,category=category)
         allcategories = Category.objects.all()
         return render(request,"auctions/index.html", {'activeitems': filteredItems, "categories":allcategories})
+
+def watchlist(request):
+    currentuser = request.user
+    watchlistItem = currentuser.watchlist.all()
+    return render(request, "auctions/watchlist.html",{"listing":watchlistItem})
+
+
+def addwatchlist(request,id):
+    listingdata = Listing.objects.get(pk=id)
+    currentuser = request.user
+    listingdata.watvhlist.add(currentuser)
+    return HttpResponseRedirect(reverse("listing", args=(id, )))
+
+def removewatchlist(request,id):
+    listingdata = Listing.objects.get(pk=id)
+    currentuser = request.user
+    listingdata.watvhlist.remove(currentuser)
+    return HttpResponseRedirect(reverse("listing", args=(id, )))
+
+def listing(request,id):
+    listingData = Listing.objects.get(pk=id)
+    return render(request, "auctions/listing.html",{"details":listingData})
+
+
+
 
 def login_view(request):
     if request.method == "POST":
