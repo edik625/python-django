@@ -1,7 +1,9 @@
 from rest_framework import serializers # type: ignore
 from .models import Book
-from rest_framework.renderers import JSONRenderer
 import io
+from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
+
 
 
 # class BookSerializer(serializers.ModelSerializer):
@@ -33,3 +35,9 @@ def encode():
 
 
 
+def decode():
+    stream = io.BytesIO(b'{"title":"New_book", "publicated_date": "2024-05-29", "author": 2}')
+    data = JSONParser().parse(stream)
+    serializer = BookSerializer(data=data)
+    serializer.is_valid()
+    print(serializer.validated_data)
