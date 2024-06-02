@@ -5,7 +5,7 @@ from .models import Shef, Recepe
 class ShefSerializer(serializers.ModelSerializer):
     class Meta:
         model = Shef
-        fields = "__al__"
+        fields = "__all__"
 
 
 class RecepeSerializer(serializers.ModelSerializer):
